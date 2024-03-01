@@ -14,8 +14,29 @@ class RoleController extends Controller
         return view('admin.roles.index',compact('roles'));
     }
 
+   
     public function create()
     {
-        return view('admin.roles.add');
+        return view('admin.roles.create');
     }
+
+
+    public function store(Request $request)
+    {
+        
+        $validated = $request->validate([
+            'name' => 'required|string|min:3',
+        ]);
+
+        
+        Role::create([
+            'name' => $validated['name'],
+            'guard_name' => 'web',
+        ]);
+
+        
+        return redirect()->route('admin.roles.index')->with('success', 'Roles added successfully');
+    }
+
+
 }

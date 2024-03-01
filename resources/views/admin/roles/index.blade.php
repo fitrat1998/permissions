@@ -9,10 +9,14 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Roles</h3>
-                <a href="" class="btn btn-success float-right">Add</a>
+                <a href="{{ route('admin.roles.create') }}" class="btn btn-success float-right">Add</a>
               </div>
               <div class="card-header">
-              	
+              	@if(session('success'))
+                  <div class="alert alert-success">
+                      {{ session('success') }}
+                  </div>
+                @endif
               </div>
               <!-- /.card-header -->
               <div class="card-body">

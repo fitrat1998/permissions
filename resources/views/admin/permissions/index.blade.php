@@ -9,7 +9,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Permissions</h3>
-                <a href="" class="btn btn-success float-right">Add</a>
+                <a href="{{ route('admin.permissions.create')}}" class="btn btn-success float-right">Add</a>
 
               </div>
               <!-- /.card-header -->
