@@ -31,15 +31,15 @@
                   </thead>
                   <tbody>
                      @foreach($roles as $r)
-                    <tr>
-                      <td>{{ $r->id}}</td>
-                      <td>
-                           {{ $r->name}}
-                      </td>
-                      <td class="w-25">Edit</td>
-                      <td class="w-25">Delete</td>
-                    </tr>
-                      @endforeach
+                      <tr>
+                        <td>{{ $r->id}}</td>
+                        <td>
+                             {{ $r->name}}
+                        </td>
+                        <td class="w-25"><a href="{{ route('admin.roles.edit',$r->id) }}" class="btn btn-primary">Edit</a></td>
+                        <td class="w-25"><a href="" class="btn btn-danger">Delete</a></td>
+                      </tr>
+                    @endforeach
                   
                   </tbody>
                 </table>

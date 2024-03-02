@@ -35,7 +35,32 @@ class RoleController extends Controller
         ]);
 
         
-        return redirect()->route('admin.roles.index')->with('success', 'Roles added successfully');
+        return redirect()->route('admin.roles.index')->with('success', 'Role added successfully');
+    }
+
+    public function edit($id)
+    {
+        $role = Role::find($id);
+
+        return view('admin.roles.edit',compact('role'));
+    }
+
+    public function update(Request $request,$id)
+    {
+       $validated = $request->validate([
+            'name' => 'required|string|min:3',
+        ]);
+
+        $role = Role::find($id);
+
+        $role->update([
+            'name' => $validated['name'],
+        ]);
+
+
+        return redirect()->route('admin.roles.index')->with('success', 'Role updated successfully');
+
+
     }
 
 
