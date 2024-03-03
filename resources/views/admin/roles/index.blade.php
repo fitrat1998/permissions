@@ -37,7 +37,12 @@
                              {{ $r->name}}
                         </td>
                         <td class="w-25"><a href="{{ route('admin.roles.edit',$r->id) }}" class="btn btn-primary">Edit</a></td>
-                        <td class="w-25"><a href="" class="btn btn-danger">Delete</a></td>
+                        <form method="POST" action="{{ route('admin.roles.destroy',$r->id) }}" onsubmit="return confirm('Are you sure!!!!')">
+                          @csrf 
+                          @method('DELETE')
+                          
+                        <td class="w-25"><button type="submit" class="btn btn-danger">Delete</button></td>
+                        </form>
                       </tr>
                     @endforeach
                   

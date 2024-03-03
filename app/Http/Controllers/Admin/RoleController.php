@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Role;
+use App\Models\Permission;
+
 
 class RoleController extends Controller
 {
     public function index()
     {
-        $roles = Role::all();
+        $roles = Role::whereNotIn('name', ['admin'])->get();;
         return view('admin.roles.index',compact('roles'));
     }
 
@@ -30,7 +32,7 @@ class RoleController extends Controller
 
         
         Role::create([
-            'name' => $validated['name'],
+            'name' => $validated['name'],   
             'guard_name' => 'web',
         ]);
 
@@ -42,7 +44,9 @@ class RoleController extends Controller
     {
         $role = Role::find($id);
 
-        return view('admin.roles.edit',compact('role'));
+        $permission = Permission::all();
+
+        return view('admin.roles.edit',compact('role','permission'));
     }
 
     public function update(Request $request,$id)
@@ -60,6 +64,27 @@ class RoleController extends Controller
 
         return redirect()->route('admin.roles.index')->with('success', 'Role updated successfully');
 
+
+
+    }
+
+    public function givePermission(Request $request,Role $role)
+    {
+        if($role->hasPermissionTo($request->permission)){
+            return redirect()->back()->with('success', 'Permission already exists ');
+        }
+        $role->givePermissionTo($request->permission);
+        return redirect()->route('admin.roles.index')->with('success', 'Permission added successfully');
+
+
+    }
+
+    public function destroy($id)
+    {
+
+        Role::find($id)->delete();
+
+        return redirect()->route('admin.roles.index')->with('success', 'Role deleted successfully');
 
     }
 
