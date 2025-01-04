@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Index;
-use App\Http\Requests\StoreIndexRequest;
-use App\Http\Requests\UpdateIndexRequest;
+use App\Models\User;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 
-class IndexController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('pages.register');
+        //
     }
 
     /**
@@ -31,21 +31,21 @@ class IndexController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreIndexRequest  $request
+     * @param  \App\Http\Requests\StoreUserRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreIndexRequest $request)
+    public function store(StoreUserRequest $request)
     {
-        //
+        return $request;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Index  $index
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Index $index)
+    public function show(User $user)
     {
         //
     }
@@ -53,10 +53,10 @@ class IndexController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Index  $index
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Index $index)
+    public function edit(User $user)
     {
         //
     }
@@ -64,11 +64,11 @@ class IndexController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateIndexRequest  $request
-     * @param  \App\Models\Index  $index
+     * @param  \App\Http\Requests\UpdateUserRequest  $request
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateIndexRequest $request, Index $index)
+    public function update(UpdateUserRequest $request, User $user)
     {
         //
     }
@@ -76,10 +76,10 @@ class IndexController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Index  $index
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Index $index)
+    public function destroy(User $user)
     {
         //
     }

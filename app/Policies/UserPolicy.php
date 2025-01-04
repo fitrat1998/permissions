@@ -2,21 +2,21 @@
 
 namespace App\Policies;
 
-use App\Models\IndexController;
 use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class IndexControllerPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
 
     /**
      * Determine whether the user can view any models.
      *
-     * @param  \App\Models\Admin  $user
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(Admin $user)
+    public function viewAny(Admin $admin)
     {
         //
     }
@@ -24,11 +24,11 @@ class IndexControllerPolicy
     /**
      * Determine whether the user can view the model.
      *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Models\IndexController  $indexController
+     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(Admin $user, IndexController $indexController)
+    public function view(Admin $admin, User $model)
     {
         //
     }
@@ -36,10 +36,10 @@ class IndexControllerPolicy
     /**
      * Determine whether the user can create models.
      *
-     * @param  \App\Models\Admin  $user
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(Admin $user)
+    public function create(Admin $admin)
     {
         //
     }
@@ -47,11 +47,11 @@ class IndexControllerPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Models\IndexController  $indexController
+     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(Admin $user, IndexController $indexController)
+    public function update(Admin $admin, User $model)
     {
         //
     }
@@ -59,11 +59,11 @@ class IndexControllerPolicy
     /**
      * Determine whether the user can delete the model.
      *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Models\IndexController  $indexController
+     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(Admin $user, IndexController $indexController)
+    public function delete(Admin $admin, User $model)
     {
         //
     }
@@ -71,11 +71,11 @@ class IndexControllerPolicy
     /**
      * Determine whether the user can restore the model.
      *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Models\IndexController  $indexController
+     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(Admin $user, IndexController $indexController)
+    public function restore(Admin $admin, User $model)
     {
         //
     }
@@ -83,11 +83,11 @@ class IndexControllerPolicy
     /**
      * Determine whether the user can permanently delete the model.
      *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Models\IndexController  $indexController
+     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(Admin $user, IndexController $indexController)
+    public function forceDelete(Admin $admin, User $model)
     {
         //
     }

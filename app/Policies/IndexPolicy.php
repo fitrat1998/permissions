@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Index;
-use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class IndexPolicy
@@ -13,10 +13,10 @@ class IndexPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user)
+    public function viewAny(Admin $user)
     {
         //
     }
@@ -24,11 +24,11 @@ class IndexPolicy
     /**
      * Determine whether the user can view the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $user
      * @param  \App\Models\Index  $index
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Index $index)
+    public function view(Admin $user, Index $index)
     {
         //
     }
@@ -36,10 +36,10 @@ class IndexPolicy
     /**
      * Determine whether the user can create models.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(User $user)
+    public function create(Admin $user)
     {
         //
     }
@@ -47,11 +47,11 @@ class IndexPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $user
      * @param  \App\Models\Index  $index
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Index $index)
+    public function update(Admin $user, Index $index)
     {
         //
     }
@@ -59,11 +59,11 @@ class IndexPolicy
     /**
      * Determine whether the user can delete the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $user
      * @param  \App\Models\Index  $index
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Index $index)
+    public function delete(Admin $user, Index $index)
     {
         //
     }
@@ -71,11 +71,11 @@ class IndexPolicy
     /**
      * Determine whether the user can restore the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $user
      * @param  \App\Models\Index  $index
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Index $index)
+    public function restore(Admin $user, Index $index)
     {
         //
     }
@@ -83,11 +83,11 @@ class IndexPolicy
     /**
      * Determine whether the user can permanently delete the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $user
      * @param  \App\Models\Index  $index
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Index $index)
+    public function forceDelete(Admin $user, Index $index)
     {
         //
     }

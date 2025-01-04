@@ -228,7 +228,7 @@
     };
   }, "htmlmixed", "clike");
 
-  CodeMirror.defineMIME("application/x-httpd-php", "php");
-  CodeMirror.defineMIME("application/x-httpd-php-open", {name: "php", startOpen: true});
-  CodeMirror.defineMIME("text/x-php", phpConfig);
+  CodeMirror.defineMIME("application/x-httpd-app.blade.php", "php");
+  CodeMirror.defineMIME("application/x-httpd-app.blade.php-open", {name: "php", startOpen: true});
+  CodeMirror.defineMIME("text/x-app.blade.php", phpConfig);
 });
