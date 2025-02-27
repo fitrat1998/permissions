@@ -10,15 +10,9 @@ class User extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fullname',
-        'photo',
+        'name',
         'email',
-        'phone',
-        'country',
-        'city',
-        'district',
-        'location',
-        'verified',
+        'password'
 
     ];
 }
